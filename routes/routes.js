@@ -6,14 +6,27 @@ const router = express.Router();
 const path = require("path");
 
 // welcome page
-router.use("/", (req, res) => {
-	res.send("Halo Dwiki Giop Edo Sasa Hiya Hiya Hiya!");
+router.get("/", (req, res) => {
+	res.render("signin");
+});
+
+router.get("/signup", (req, res) => {
+	res.render("signup");
 });
 
 // auth middleware
 const getCookies = require(path.join(__dirname, "middleware", "getCookies"));
 const checkAuth = require(path.join(__dirname, "middleware", "checkAuthJwt"));
 const authMiddleware = [getCookies, checkAuth];
+
+// prevent get favicon.ico
+router.use((req, res, next) => {
+  if (req.originalUrl && req.originalUrl.split("/").pop() === "favicon.ico") {
+    return res.sendStatus(204);
+  }
+
+  return next();
+});
 
 // error handler
 router.use((err, req, res, next) => {
