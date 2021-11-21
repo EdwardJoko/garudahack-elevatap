@@ -26,3 +26,11 @@
   height: 10rem;
   width: 10rem;
 }
+
+.col-4 .card{
+  min-height: 220px;
+}
+
+.margin-section{
+  margin-bottom: 162px;
+}

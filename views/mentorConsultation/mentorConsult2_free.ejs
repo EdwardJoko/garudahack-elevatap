@@ -14,69 +14,70 @@
 </head>
 
 <body>
-  <div class="container">
-    <!-- profile -->
-    <div class="d-flex gap-5 ">
-      <div class="card flex p-3 mentor__bigcard h-75">
-        <div class="d-flex flex-row justify-content-between">
-          <h4>MSMEs Profile</h4>
-          <a href="#">Edit</a>
-        </div>
-        <hr>
-        <div class="d-flex gap-4">
-          <img src="/images/anonPeople.svg" alt="" class="align-self-start">
-          <div>
-            <h5>Keripik Bang Udin</h5>
-            <p><i class="fas fa-store-alt"></i> Type Of Bussiness</p>
-            <p><i class="fas fa-map-marker-alt"></i> Yogyakarta, Indonesia</p>
-            <p><i class="fas fa-suitcase"></i> +3 years experience</p>
-            <p><i class="fas fa-envelope"></i> keripik.udin@gmail.com</p>
-            <p><i class="fas fa-phone-alt"></i> +62 858 7611 2152</p>
+  <%- (include('./navbar.ejs')) %>
+    <div class="container">
+      <!-- profile -->
+      <div class="d-flex gap-5 ">
+        <div class="card flex p-3 mentor__bigcard h-75">
+          <div class="d-flex flex-row justify-content-between">
+            <h4>MSMEs Profile</h4>
+            <a href="#">Edit</a>
           </div>
-        </div>
-      </div>
-      <!-- Form -->
-      <form action="">
-        <h3>Registration for Consultation</h3>
-        <p class="fs-3 mb-3">Please read Privacy Policy before starting the consultation.</p>
-        <!-- card Form -->
-        <div class="card row d-grip p-3 mentor__bigcard">
-          <div class="">
-            <label for="businessName" class="form-label">Business Name</label>
-            <input type="text" class="form-control" id="businessName">
-          </div>
-          <div class="">
-            <label for="businessLoc" class="form-label">Business Location</label>
-            <input type="text" class="form-control" id="businessLoc">
-          </div>
-          <div class="">
-            <label for="businessType" class="form-label">Type of Business</label>
-            <select id="businessType" class="form-select" aria-placeholder="Select type">
-              <!-- <option selected></option> -->
-              <option>1</option>
-              <option>2</option>
-            </select>
-          </div>
-          <div class="">
-            <label for="consultationType" class="form-label">Type of consultation</label>
-            <input type="text" class="form-control" id="consultationType" placeholder="">
-          </div>
-          <div class="">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                I have read and agree to the <u><b>Terms & Conditions</b></u>
-              </label>
+          <hr>
+          <div class="d-flex gap-4">
+            <img src="/images/anonPeople.svg" alt="" class="align-self-start">
+            <div>
+              <h5>Keripik Bang Udin</h5>
+              <p><i class="fas fa-store-alt"></i> Type Of Bussiness</p>
+              <p><i class="fas fa-map-marker-alt"></i> Yogyakarta, Indonesia</p>
+              <p><i class="fas fa-suitcase"></i> +3 years experience</p>
+              <p><i class="fas fa-envelope"></i> keripik.udin@gmail.com</p>
+              <p><i class="fas fa-phone-alt"></i> +62 858 7611 2152</p>
             </div>
           </div>
-          <p>*The consultation time is <u>only available for 30 minutes</u>, got it!</p>
-          <div class="col-6">
-            <a href="/mentor-consultation/chat-room" class="btn btn-primary">Continue</a>
-          </div>
         </div>
-      </form>
+        <!-- Form -->
+        <form action="">
+          <h3>Registration for Consultation</h3>
+          <p class="fs-3 mb-3">Please read Privacy Policy before starting the consultation.</p>
+          <!-- card Form -->
+          <div class="card row d-grip p-3 mentor__bigcard">
+            <div class="">
+              <label for="businessName" class="form-label">Business Name</label>
+              <input type="text" class="form-control" id="businessName">
+            </div>
+            <div class="">
+              <label for="businessLoc" class="form-label">Business Location</label>
+              <input type="text" class="form-control" id="businessLoc">
+            </div>
+            <div class="">
+              <label for="businessType" class="form-label">Type of Business</label>
+              <select id="businessType" class="form-select" aria-placeholder="Select type">
+                <!-- <option selected></option> -->
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+            <div class="">
+              <label for="consultationType" class="form-label">Type of consultation</label>
+              <input type="text" class="form-control" id="consultationType" placeholder="">
+            </div>
+            <div class="">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  I have read and agree to the <u><b>Terms & Conditions</b></u>
+                </label>
+              </div>
+            </div>
+            <p>*The consultation time is <u>only available for 30 minutes</u>, got it!</p>
+            <div class="col-6">
+              <a href="/mentor-consultation/chat-room" class="btn btn-primary">Continue</a>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>
