@@ -184,7 +184,7 @@ router.get("/mentor-consultation/paid",authMiddleware, (req, res) => {
 
 router.get("/mentor-consultation/chat-room",authMiddleware, (req, res) => {
 	const login = true;
-	res.render("mentorConsultation/mentorConsult3.ejs")
+	res.render("mentorConsultation/mentorConsult3.ejs", { login })
 });
 
 router.get("/signout", (req, res) => {
