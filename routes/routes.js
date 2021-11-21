@@ -168,18 +168,22 @@ router.get("/businessLegality5", authMiddleware, (req, res) => {
 });
 
 router.get("/mentor-consultation",authMiddleware, (req, res) => {
-	res.render("mentorConsultation/mentorConsultation1.ejs")
+	const login = true;
+	res.render("mentorConsultation/mentorConsultation1.ejs", { login })
 });
 
 router.get("/mentor-consultation/free",authMiddleware, (req, res) => {
-	res.render("mentorConsultation/mentorConsult2_free.ejs")
+	const login = true;
+	res.render("mentorConsultation/mentorConsult2_free.ejs", { login })
 });
 
 router.get("/mentor-consultation/paid",authMiddleware, (req, res) => {
-	res.render("mentorConsultation/mentorConsult2_paid.ejs")
+	const login = true;
+	res.render("mentorConsultation/mentorConsult2_paid.ejs", { login })
 });
 
 router.get("/mentor-consultation/chat-room",authMiddleware, (req, res) => {
+	const login = true;
 	res.render("mentorConsultation/mentorConsult3.ejs")
 });
 
