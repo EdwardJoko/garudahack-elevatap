@@ -1,0 +1,28 @@
+.mentor__bigcard{
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 6px !important;
+  max-width: 1064px;
+}
+
+.carousel-control-next {
+  justify-content: end !important;
+}
+
+.carousel-control-prev{
+  justify-content: start !important;
+}
+
+.col-md-3 > .card {
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.mentor__nextprev{
+  color: white;
+  position: relative;
+  right: 0x;
+  /* top: -20px; */
+  z-index: 5;
+  background-color: black;
+  border-radius: 100%;
+}
