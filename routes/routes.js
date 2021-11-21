@@ -164,12 +164,12 @@ router.get("/businessLegality3", authMiddleware, (req, res) => {
 
 router.get("/businessLegality4", authMiddleware, (req, res) => {
 	const login = true;
-  res.render('businessLegality/businessLegality4', { login })
+  res.render('businessLegality/businessLegalty4', { login })
 });
 
 router.get("/businessLegality5", authMiddleware, (req, res) => {
 	const login = true;
-  res.render('businessLegality/businessLegality5', { login })
+  res.render('businessLegality/businessLegalty5', { login })
 });
 
 router.get("/mentor-consultation",authMiddleware, (req, res) => {
