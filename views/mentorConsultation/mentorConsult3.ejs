@@ -5,11 +5,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elevatap</title>
   <link rel="stylesheet" href="">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/tab_logo.jpeg">
+  <title>Elevatap</title>
+
+	<style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
 </head>
 
 <body>
@@ -21,7 +35,7 @@
         <hr>
         <div class="d-flex flex-column justify-content-center align-items-center ">
           <div>
-            <img src="../public/images/anonPeople.svg" alt="" class="">
+            <img src="/images/anonPeople.svg" alt="" class="">
           </div>
           <h5>Firgiana Lutfi Wibawa</h5>
           <p>Business Consultant</p>
@@ -34,10 +48,14 @@
       <!-- Form -->
       <div class="card w-75 p-4">
         <div class="d-flex flex-row align-items-start">
-          <img src="../public/images/anonPeople.svg" alt="" class="">
+          <img src="/images/anonPeople.svg" alt="" class="">
           <div class="pt-2 ps-2">
             <h5>Firgiana Lutfi Wibawa</h5>
             <p>typing...</p>
+						<ul id="messages"></ul>
+						<form id="form" action="">
+							<input id="input" autocomplete="off" /><button>Send</button>
+						</form>
           </div>
           <i class="fas fa-ellipsis-v ms-auto"></i>
         </div>
@@ -45,6 +63,30 @@
       </div>
     </div>
   </div>
+
+	<script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+	<script>
+	  var socket = io();
+
+	  var messages = document.getElementById('messages');
+	  var form = document.getElementById('form');
+	  var input = document.getElementById('input');
+
+	  form.addEventListener('submit', function(e) {
+		e.preventDefault();
+		if (input.value) {
+		  socket.emit('chat message', input.value);
+		  input.value = '';
+		}
+	  });
+
+	  socket.on('chat message', function(msg) {
+		var item = document.createElement('li');
+		item.textContent = msg;
+		messages.appendChild(item);
+		window.scrollTo(0, document.body.scrollHeight);
+	  });
+	</script>
 </body>
 
 </html>

@@ -73,7 +73,7 @@ router.get("/signin/:status", (req, res) => {
 	else if (status == "auth-fail") {
 		message = "Authentication failed.";
 	} else if (status == "expired") {
-		message = "Your session is expired.";
+		message = "Please Sign In. Your session is expired.";
 	}
 
 	res.render("signin", { message, login });
@@ -165,6 +165,22 @@ router.get("/businessLegality4", authMiddleware, (req, res) => {
 
 router.get("/businessLegality5", authMiddleware, (req, res) => {
   res.render('businessLegality/businessLegality5')
+});
+
+router.get("/mentor-consultation",authMiddleware, (req, res) => {
+	res.render("mentorConsultation/mentorConsultation1.ejs")
+});
+
+router.get("/mentor-consultation/free",authMiddleware, (req, res) => {
+	res.render("mentorConsultation/mentorConsult2_free.ejs")
+});
+
+router.get("/mentor-consultation/paid",authMiddleware, (req, res) => {
+	res.render("mentorConsultation/mentorConsult2_paid.ejs")
+});
+
+router.get("/mentor-consultation/chat-room",authMiddleware, (req, res) => {
+	res.render("mentorConsultation/mentorConsult3.ejs")
 });
 
 router.get("/signout", (req, res) => {
