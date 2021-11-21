@@ -1,7 +1,19 @@
-.homepage__cardbutton{
-  top:-40px ;
+.homepage__background{
+  z-index: -3;
+  position: relative;
+  top: -120px;
+  left: -20px;
 }
 
+.homepage__background > img{
+  min-width: 101vw;
+}
+
+.homepage__cardbutton{
+  top:-120px ;
+  height: 162px !important;
+  width: 60%;
+}
 .homepage__smallcard .col-5{
   background-color: #C0C0C0;
 }
