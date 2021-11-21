@@ -9,3 +9,8 @@
 .homepage__bigcard{
   background-color: #C0C0C0;
 }
+
+.card-img-top{
+  height: 10rem;
+  width: 10rem;
+}

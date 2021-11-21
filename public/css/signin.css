@@ -2,6 +2,11 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 16px;
   font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.nav__background{
+  background-color: white !important  ;
 }
 
 .login__section {
