@@ -148,23 +148,28 @@ router.get("/homepage", authMiddleware, (req, res) => {
 });
 
 router.get("/businessLegality1", authMiddleware, (req, res) => {
-  res.render('businessLegality/businessLegality1')
+	const login = true;
+  res.render('businessLegality/businessLegality1', { login })
 });
 
 router.get("/businessLegality2", authMiddleware, (req, res) => {
-  res.render('businessLegality/businessLegality2')
+	const login = true;
+  res.render('businessLegality/businessLegality2', { login })
 });
 
 router.get("/businessLegality3", authMiddleware, (req, res) => {
-  res.render('businessLegality/businessLegality3')
+	const login = true;
+  res.render('businessLegality/businessLegality3', { login })
 });
 
 router.get("/businessLegality4", authMiddleware, (req, res) => {
-  res.render('businessLegality/businessLegality4')
+	const login = true;
+  res.render('businessLegality/businessLegality4', { login })
 });
 
 router.get("/businessLegality5", authMiddleware, (req, res) => {
-  res.render('businessLegality/businessLegality5')
+	const login = true;
+  res.render('businessLegality/businessLegality5', { login })
 });
 
 router.get("/mentor-consultation",authMiddleware, (req, res) => {
