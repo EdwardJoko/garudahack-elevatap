@@ -1,6 +1,7 @@
 // routes
 const express = require("express");
 const router = express.Router();
+const businessLegaltyRoute = require('./businessLegaltyRoute/businessLegaltyRoute')
 
 // path
 const path = require("path");
@@ -13,6 +14,8 @@ router.get("/", (req, res) => {
 router.get("/signup", (req, res) => {
 	res.render("signup");
 });
+
+router.use('/formBusiness', businessLegaltyRoute)
 
 // auth middleware
 const getCookies = require(path.join(__dirname, "middleware", "getCookies"));
