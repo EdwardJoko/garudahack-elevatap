@@ -2,8 +2,7 @@ const getCookies = (req, res, next) => {
   try {
     // if there's no cookie
     if (!req.headers.cookie) {
-      const message = "Your session has expired.";
-      return res.render("welcome", { message });
+			return res.redirect("/signin/expired");
     }
     // if the cookie exists
     else {
@@ -13,8 +12,7 @@ const getCookies = (req, res, next) => {
     }
   } catch (err) {
     console.error(err);
-    const message = "Your session has expired.";
-    return res.render("welcome", { message });
+		const message = "Your session has expired.";
   }
 };
 

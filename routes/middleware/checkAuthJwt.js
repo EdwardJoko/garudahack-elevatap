@@ -8,8 +8,7 @@ const checkAuthJwt = (req, res, next) => {
     next();
   } catch (err) {
     console.error(err);
-    const message = "Your session has expired.";
-    return res.render("welcome", { message });
+    return res.redirect("/signin/expired");
   }
 };
 
